@@ -23,6 +23,9 @@ public class Inventory : MonoBehaviour {
 	//hints
 	public GUIText textHints;
 	
+	//win animation
+	public GameObject winObj;
+	
 	void Start () {
 		charge = 0;
 	}
@@ -67,6 +70,7 @@ public class Inventory : MonoBehaviour {
 		campfire.audio.Play();
 		Destroy(matchGUI);
 		haveMatches = false;
+		winObj.SendMessage("GameOver");
 	}
 
 }
